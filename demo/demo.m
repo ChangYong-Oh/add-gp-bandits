@@ -1,10 +1,11 @@
-% Experiment Set up for Bayesian Optimization and GP Bandits
+% Experiment Set up for levy 20D
 
 close all;
 clear all;
 addpath ../addGPLibkky/
 addpath ../BOLibkky/
 addpath ../utils/
+addpath ../benchmarks/
 warning off;
 rng('shuffle');
 
