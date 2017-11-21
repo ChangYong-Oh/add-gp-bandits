@@ -11,8 +11,11 @@ function run_additive_BO(func_name, numDims, numIters, maxGroupSize, decompStrat
     assert(strcmp(decompStrategy, 'partialLearn') | strcmp(decompStrategy, 'stoch1'))
     assert(numDims >= maxGroupSize)
     
-    exp_result_dir = '/home/coh1/Experiments/Additive_BO_mat/';
-
+    dirnames = strsplit(mfilename('fullpath'), '/');
+    dirnames = dirnames(1:end-4);
+    dirnames{end + 1} = 'Experiments/Additive_BO_mat/';
+    exp_result_dir = strjoin(dirnames, '/');
+    
     numExperiments = 5;
 
     % Different configuration for different experiments
