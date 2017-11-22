@@ -10,6 +10,7 @@ function run_additive_BO(func_name, numDims, numIters, maxGroupSize, decompStrat
     dirnames = dirnames(1:end-4);
     dirnames{end + 1} = 'Experiments/Additive_BO_mat/';
     exp_result_dir = strjoin(dirnames, '/');
+    time_tag = datestr(now(), 'yyyymmdd-HH:MM:SS:fff');
     
     numExperiments = 5;
 
@@ -62,7 +63,7 @@ function run_additive_BO(func_name, numDims, numIters, maxGroupSize, decompStrat
     end
 
     % Obtain the simple and cumulative regrets and plot them.
-    save(strcat(exp_result_dir, filename_prefix, '_x.mat'), 'queries');
-    save(strcat(exp_result_dir, filename_prefix, '_y.mat'), 'neg_values');
-    save(strcat(exp_result_dir, filename_prefix, '_optimum.mat'), 'neg_optima');
+    save(strcat(exp_result_dir, filename_prefix , '_', time_tag, '_x.mat'), 'queries');
+    save(strcat(exp_result_dir, filename_prefix , '_', time_tag, '_y.mat'), 'neg_values');
+    save(strcat(exp_result_dir, filename_prefix , '_', time_tag, '_optimum.mat'), 'neg_optima');
 end
