@@ -1,11 +1,6 @@
 function run_additive_BO(func_name, numDims, numIters, maxGroupSize, decompStrategy)
     % Experiment Set up for Bayesian Optimization and GP Bandits
 
-    addpath ../addGPLibkky/
-    addpath ../BOLibkky/
-    addpath ../utils/
-    addpath ../benchmarks/
-    warning off;
     rng('shuffle');
 
     assert(strcmp(decompStrategy, 'partialLearn') | strcmp(decompStrategy, 'stoch1'))
