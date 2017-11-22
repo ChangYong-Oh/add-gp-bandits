@@ -5,7 +5,6 @@ addpath ./addGPLibkky/
 addpath ./BOLibkky/
 addpath ./utils/
 addpath ./benchmarks/
-    
 
 func_name_cell = ...
     {'levy', 'michalewicz', 'rosenbrock', 'rotatedschwefel',...
@@ -24,7 +23,7 @@ for s = 1:2
     for d = 1:5
         for f = 1:numel(func_name_cell)
             for g = 1:5
-                run_additive_BO(func_name_cell(f), numDims(d), numIters(d), maxGroupSize(d, g), decompStrategy(s));
+                run_additive_BO(func_name_cell{f}, numDims(d), numIters(d), maxGroupSize(d, g), decompStrategy{s});
             end
         end
     end
