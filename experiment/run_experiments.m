@@ -16,14 +16,12 @@ maxGroupSize = [];
 maxGroupSize(1, :) = [ 3,  5, 10, 13, 18];
 maxGroupSize(2, :) = [ 5, 10, 13, 25, 45];
 maxGroupSize(3, :) = [ 5, 10, 25, 32, 50];
-maxGroupSize(4, :) = [10, 15, 25, 40, 50];
-maxGroupSize(5, :) = [10, 25, 50, 60, 90];
 decompStrategy = {'partialLearn'};
 
-for s = 1:2
-    for d = 1:5
+for s = 1:numel(decompStrategy)
+    for d = 1:numel(numDims)
         for f = 1:numel(func_name_cell)
-            for g = 1:5
+            for g = 1:numel(maxGroupSize(d, :))
                 run_additive_BO(func_name_cell{f}, numDims(d), numIters(d), maxGroupSize(d, g), decompStrategy{s});
             end
         end
