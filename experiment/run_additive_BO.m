@@ -15,16 +15,22 @@ function run_additive_BO(func_name, numDims, numIters, maxGroupSize, decompStrat
     numExperiments = 5;
 
     % Different configuration for different experiments
-    if strcmp(func_name, 'levy')
+    if strcmp(func_name, 'bird')
+        func = @(t) -bird(t);
+    elseif strcmp(func_name, 'branin')
+        func = @(t) -branin(t);
+    elseif strcmp(func_name, 'camelback')
+        func = @(t) -camelback(t);
+    elseif strcmp(func_name, 'hartmann6')
+        func = @(t) -hartmann6(t);
+    elseif strcmp(func_name, 'levy')
         func = @(t) -levy(t);
     elseif strcmp(func_name, 'michalewicz')
         func = @(t) -michalewicz(t);
+    elseif strcmp(func_name, 'qing')
+        func = @(t) -qing(t);
     elseif strcmp(func_name, 'rosenbrock')
         func = @(t) -rosenbrock(t);
-    elseif strcmp(func_name, 'rotatedschwefel')
-        func = @(t) -rotatedschwefel(t);
-    elseif strcmp(func_name, 'rotatedstyblinskitang')
-        func = @(t) -rotatedstyblinskitang(t);
     elseif strcmp(func_name, 'schwefel')
         func = @(t) -schwefel(t);
     elseif strcmp(func_name, 'styblinskitang')
