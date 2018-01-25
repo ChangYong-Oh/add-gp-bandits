@@ -35,7 +35,7 @@ function run_additive_BO(func_name, numDims, numIters, maxGroupSize, decompStrat
 
     bounds = [-ones(numDims, 1), ones(numDims, 1)];
 
-    initPoints = [zeros(1, numDims); ones(1, numDims)];
+    initPoints = [zeros(1, numDims); unifrnd(-1, 1, 1, numDims)];
     n_init_points = size(initPoints, 1); 
 
     queries = zeros(0, numIters + n_init_points, numDims);
